@@ -1,0 +1,9 @@
+.loading {
+  background: rgb(16, 64, 50);
+  background: linear-gradient(
+    0deg,
+    rgba(16, 64, 50, 1) 12%,
+    rgba(11, 189, 88, 1) 88%
+  );
+  min-height: 100vh;
+}
