@@ -1,0 +1,12 @@
+* {
+  transition: all ease-in 300ms;
+}
+
+.gradientBg {
+  background: linear-gradient(79.36deg, #02fbe3 4.61%, #08d76f 41.51%);
+}
+
+.gradientHover:hover {
+  background: linear-gradient(79.36deg, #02fbe3 4.61%, #08d76f 41.51%);
+  color: #000;
+}

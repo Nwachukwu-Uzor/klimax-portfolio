@@ -13,7 +13,9 @@ const StyledLinked = ({ text, to, color }) => {
   return (
     <NavLink
       to={to}
-      className={({ isActive }) => `${isActive ? "text-[#08D76F]" : ""}`}
+      className={({ isActive }) =>
+        `${isActive ? "text-[#08D76F]" : ""} ${color}`
+      }
     >
       {text}
     </NavLink>
@@ -25,11 +27,12 @@ const Navigation = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavOpen = () => {
+    console.log("clicked");
     setNavOpen((open) => !open);
   };
   return (
     <header
-      className={`${navColor} ${primaryTextColor} h-[60px] flex items-center justify-center`}
+      className={`${navColor} ${primaryTextColor} h-[60px] flex items-center justify-center shadow-md`}
     >
       <Container>
         <nav className="flex justify-between items-center relative">
@@ -50,52 +53,19 @@ const Navigation = () => {
             <ion-icon name="menu-outline"></ion-icon>
           </span>
           <ul
-            className={`flex flex-col lg:flex-row gap-3 lg:justify-between absolute top-[50px] left-0 w-full ${
-              navOpen ? "opacity-100 flex" : "hidden opacity-0"
-            } lg:flex opacity-100 lg:w-fit lg:static ${
+            className={`flex flex-col items-center justify-center lg:flex-row gap-3 lg:justify-between absolute z-10 top-[50px] left-0 w-full ${
+              navOpen ? "opacity-100 flex" : "opacity-0"
+            } lg:flex lg:opacity-100 lg:w-fit lg:static ${
               isDarkTheme
-                ? "bg-white text-black lg:bg-transparent lg:text-inherit"
-                : "bg-black text-white"
-            } h-[70vh] lg:h-fit lg:${primaryTextColor} lg:bg-transparent lg:text-inherit`}
+                ? "bg-black text-white lg:bg-transparent lg:text-inherit"
+                : "bg-white text-black lg:text-inherit"
+            } h-[70vh] lg:h-fit  lg:bg-transparent lg:text-inherit transition-all duration-500`}
           >
             <StyledLinked to="/home" color={primaryTextColor} text="Projects" />
             <StyledLinked to="/" color={primaryTextColor} text="Projects" />
             <StyledLinked to="/" color={primaryTextColor} text="Projects" />
           </ul>
         </nav>
-        {/* <Navbar
-          fluid={false}
-          rounded={true}
-          className={`w-full px-0 bg bg-inherit py-0 ${primaryTextColor}`}
-        >
-          <Navbar.Brand href="https://flowbite.com/">
-            <img
-              src={isDarkTheme ? DarkLogo : lightLogo}
-              className="mr-3 h-6 lg:h-8 sm:h-9"
-              alt="Flowbite Logo"
-            />
-          </Navbar.Brand>
-          <ThemeToggler />
-          <Navbar.Toggle />
-          <Navbar.Collapse>
-            <Navbar.Link
-              href="/navbars"
-              active={true}
-              className={`${primaryTextColor}`}
-            >
-              Home
-            </Navbar.Link>
-            <Navbar.Link
-              href="/navbars"
-              className={`${primaryTextColor} border-2 border-red-700`}
-            >
-              About
-            </Navbar.Link>
-            <Navbar.Link href="/navbars">Services</Navbar.Link>
-            <Navbar.Link href="/navbars">Pricing</Navbar.Link>
-            <Navbar.Link href="/navbars">Contact</Navbar.Link>
-          </Navbar.Collapse>
-        </Navbar> */}
       </Container>
     </header>
   );
