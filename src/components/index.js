@@ -3,3 +3,8 @@ export { default as HeroSection } from "./HeroSection";
 export { default as LogoSection } from "./LogoSection";
 export { default as SingleProject } from "./SingleProject";
 export { default as ProjectLists } from "./ProjectsList";
+export { default as AboutHeader } from "./AboutHeader";
+export { default as AboutImageSection } from "./AboutImageSection";
+export { default as AboutTools } from "./AboutTools";
+export { default as ListTool } from "./ListTool";
+export { default as LogoTool } from "./LogoTool";

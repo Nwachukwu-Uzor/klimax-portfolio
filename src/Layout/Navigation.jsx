@@ -13,9 +13,7 @@ const StyledLinked = ({ text, to, color }) => {
   return (
     <NavLink
       to={to}
-      className={({ isActive }) =>
-        `${isActive ? "text-[#08D76F]" : ""} ${color}`
-      }
+      className={({ isActive }) => `${isActive ? "text-[#08D76F]" : color} `}
     >
       {text}
     </NavLink>
@@ -61,8 +59,12 @@ const Navigation = () => {
                 : "bg-white text-black lg:text-inherit"
             } h-[70vh] lg:h-fit  lg:bg-transparent lg:text-inherit transition-all duration-500`}
           >
-            <StyledLinked to="/home" color={primaryTextColor} text="Projects" />
-            <StyledLinked to="/" color={primaryTextColor} text="Projects" />
+            <StyledLinked
+              to="/projects"
+              color={primaryTextColor}
+              text="Projects"
+            />
+            <StyledLinked to="/about" color={primaryTextColor} text="About" />
             <StyledLinked to="/" color={primaryTextColor} text="Projects" />
           </ul>
         </nav>

@@ -9,7 +9,7 @@ const Loading = () => {
     const timer = setInterval(() => {
       setPercentage((old) => {
         if (old >= 100) {
-          navigate("/home");
+          navigate("/projects");
         }
         return old + 10;
       });
