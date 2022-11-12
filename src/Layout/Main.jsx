@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import themeContext from "../context/themeContext/themeContext";
+import Footer from "./Footer";
 import Navigation from "./Navigation";
 
 const Main = () => {
@@ -12,6 +13,7 @@ const Main = () => {
         <Outlet />
       </section>
       {/* <div className="w-full h-[40px] bg-red-500"></div> */}
+      <Footer />
     </main>
   );
 };

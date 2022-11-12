@@ -23,7 +23,7 @@ const Loading = () => {
   return (
     <section className={`${styles.loading} flex items-center justify-center`}>
       <div className="flex flex-col gap-4 items-center text-white w-[90%] mx-auto">
-        <h1 className="text-lg lg:text-5xl font-bold">Fuel for thought</h1>
+        <h1 className="text-3xl lg:text-5xl font-bold">Fuel for thought</h1>
         <p className="text-lg">
           Just one small positive thought in the morning can change your whole
           day.
