@@ -1,12 +1,12 @@
 import React from "react";
-import HeroSection from "../components/HeroSection";
-import LogoSection from "../components/LogoSection";
+import { LogoSection, HeroSection, ProjectLists } from "../components";
 
 const Projects = () => {
   return (
     <section>
       <HeroSection />
       <LogoSection />
+      <ProjectLists />
     </section>
   );
 };

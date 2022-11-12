@@ -10,8 +10,8 @@ import webflow from "../assets/images/Webflow.svg";
 
 const LogoSection = () => {
   return (
-    <Container className="w-full py-10">
-      <div className="flex justify-between gap-2 w-full bg-inherit overflow-x-auto">
+    <Container className="py-10">
+      <div className="flex justify-between gap-2 w-full flex-wrap bg-inherit overflow-x-auto">
         <img src={figma} alt="Figma" />
         <img src={adobe} alt="adobe" />
         <img src={zeplin} alt="Figma" />
