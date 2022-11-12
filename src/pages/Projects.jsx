@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import HeroSection from "../components/HeroSection";
-import themeContext from "../context/themeContext/themeContext";
+import LogoSection from "../components/LogoSection";
 
 const Projects = () => {
-  const { navColor, primaryTextColor, backgroundColor } = useContext(themeContext);
   return (
-    <section className={`${backgroundColor} ${primaryTextColor}`}>
+    <section>
       <HeroSection />
+      <LogoSection />
     </section>
   );
 };

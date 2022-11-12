@@ -6,7 +6,7 @@ import uche from "../assets/images/hero-image.png";
 
 const HeroSection = () => {
   return (
-    <Container className="flex flex-col gap-3 lg:flex-row justify-between items-center lg:grid-cols-2 lg:py-10 min-h-[calc(85vh-60px)]">
+    <Container className="flex flex-col gap-3 lg:flex-row justify-between items-center lg:grid-cols-2 lg:py-10 min-h-[calc(85vh-60px)] relative">
       <div className="flex justify-center w-fit relative lg:justify-end lg:order-last">
         <img src={uche} alt="Ugwoke uchenna" />
         <p className="backdrop-blur-xl min-w-[200px]  bg-white/30 py-2 px-3 rounded-md absolute left-0 bottom-[25%] translate-x-[-5%] text-center">
@@ -41,6 +41,9 @@ const HeroSection = () => {
           </Link>
         </div>
       </div>
+      <span className="hidden absolute left-[50%] translate-x-[50%] bottom-14 text-3xl h-[50px] w-[50px] ring-2 ring-[#08D76F] rounded-full text-[#08D76F] lg:flex items-center justify-center animate-bounce">
+        <ion-icon name="arrow-down"></ion-icon>
+      </span>
     </Container>
   );
 };
