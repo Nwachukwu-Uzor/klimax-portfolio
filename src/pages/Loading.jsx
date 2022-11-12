@@ -18,7 +18,7 @@ const Loading = () => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [navigate]);
 
   return (
     <section className={`${styles.loading} flex items-center justify-center`}>
