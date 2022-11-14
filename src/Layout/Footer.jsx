@@ -11,10 +11,10 @@ const Footer = () => {
       <Container
         className={`border-t-2 ${
           isDarkTheme ? "border-t-white" : "border-black"
-        } flex flex-col lg:flex-row justify-between items-center`}
+        } flex flex-col gap-2 lg:flex-row justify-between lg:items-center`}
       >
         <p>Uchenna Ugwoke// c 2022</p>
-        <div className="flex gap-2">
+        <div className="flex gap-3 lg:gap-5">
           <a
             href="https://twitter.com"
             className="hover:text-[#08D76F] text-xl duration-150"

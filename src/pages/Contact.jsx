@@ -76,7 +76,7 @@ const Contact = () => {
               className="gradientBg text-black text-center py-3 w-[150px] lg:w-[200px] px-4 rounded-md flex gap-2 items-center justify-center mt-4"
               //   type="submit"
             >
-              Contact Me
+              Submit
               <span className="text-2xl flex items-center justify-center">
                 <ion-icon name="arrow-forward"></ion-icon>
               </span>

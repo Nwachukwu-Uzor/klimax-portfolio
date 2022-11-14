@@ -6,7 +6,12 @@ export { default as ListTool } from "./ListTool";
 export { default as LogoSection } from "./LogoSection";
 export { default as LogoTool } from "./LogoTool";
 export { default as ProjectLists } from "./ProjectsList";
+export { default as ResumeHeader } from "./ResumeHeader";
+export { default as ResumeEducation } from "./ResumeEducation";
+export { default as ResumeEducationDetail } from "./ResumeEducationDetail";
+export { default as ResumeExperience } from "./ResumeExperience";
+export { default as ResumeExperienceDetail } from "./ResumeExperienceDetail";
+export { default as ResumeTechnicalDetails } from "./ResumeTechnicalDetails";
 export { default as SingleProject } from "./SingleProject";
 export { default as TextInput } from "./TextInput";
 export { default as ThemeToggler } from "./ThemeToggler";
-
