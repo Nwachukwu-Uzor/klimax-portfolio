@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Main from "./Layout/Main";
-import { About, Loading, Projects } from "./pages";
+import { About, Contact, Loading, Projects } from "./pages";
 
 const App = () => {
   return (
@@ -12,6 +12,9 @@ const App = () => {
       </Route>
       <Route path="/about" element={<Main />}>
         <Route index={true} element={<About />} />
+      </Route>
+      <Route path="/contact" element={<Main />}>
+        <Route index={true} element={<Contact />} />
       </Route>
     </Routes>
   );

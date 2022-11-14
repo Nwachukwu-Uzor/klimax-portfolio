@@ -65,7 +65,11 @@ const Navigation = () => {
               text="Projects"
             />
             <StyledLinked to="/about" color={primaryTextColor} text="About" />
-            <StyledLinked to="/" color={primaryTextColor} text="Projects" />
+            <StyledLinked
+              to="/contact"
+              color={primaryTextColor}
+              text="Contact"
+            />
           </ul>
         </nav>
       </Container>
