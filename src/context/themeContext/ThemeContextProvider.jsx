@@ -19,6 +19,12 @@ const ThemeContextProvider = ({ children }) => {
     return isDarkTheme ? "bg-[#1E1E1E]" : "bg-white";
   }, [isDarkTheme]);
 
+  const subMenuColor = useMemo(() => {
+    return isDarkTheme
+      ? "bg-white text-black lg:bg-transparent lg:text-white"
+      : "bg-black text-white lg:bg-transparent lg:text-black";
+  }, [isDarkTheme]);
+
   return (
     <themeContext.Provider
       value={{
@@ -27,6 +33,7 @@ const ThemeContextProvider = ({ children }) => {
         navColor,
         primaryTextColor,
         backgroundColor,
+        subMenuColor,
       }}
     >
       {children}

@@ -6,6 +6,7 @@ const themeContext = createContext({
   backgroundColor: "",
   primaryTextColor: "",
   navColor: "bg-black",
+  subMenuColor: "",
 });
 
 export default themeContext;

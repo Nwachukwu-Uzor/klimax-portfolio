@@ -27,7 +27,7 @@ const TextInput = ({
       >
         {label}
       </label>
-      <p className="text-red-700">{touched && error && error}</p>
+      <p className="text-red-400 text-xs mt-1">{touched && error && error}</p>
     </div>
   );
 };

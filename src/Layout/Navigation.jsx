@@ -9,11 +9,12 @@ import lightLogo from "../assets/images/light-logo.png";
 import { ThemeToggler } from "../components";
 import { NavLink } from "react-router-dom";
 
-const StyledLinked = ({ text, to, color }) => {
+const StyledLinked = ({ text, to, handleClose }) => {
   return (
     <NavLink
       to={to}
-      className={({ isActive }) => `${isActive ? "text-[#08D76F]" : color} `}
+      className={({ isActive }) => `${isActive ? "text-[#08D76F]" : ""} `}
+      onClick={handleClose}
     >
       {text}
     </NavLink>
@@ -21,12 +22,16 @@ const StyledLinked = ({ text, to, color }) => {
 };
 
 const Navigation = () => {
-  const { navColor, primaryTextColor, isDarkTheme } = useContext(themeContext);
+  const { navColor, primaryTextColor, isDarkTheme, subMenuColor } =
+    useContext(themeContext);
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavOpen = () => {
-    console.log("clicked");
     setNavOpen((open) => !open);
+  };
+
+  const handleCloseNav = () => {
+    setNavOpen(false);
   };
   return (
     <header
@@ -53,22 +58,27 @@ const Navigation = () => {
           <ul
             className={`flex flex-col items-center justify-center lg:flex-row gap-3 lg:justify-between absolute z-10 top-[50px] left-0 w-full ${
               navOpen ? "opacity-100 flex" : "opacity-0"
-            } lg:flex lg:opacity-100 lg:w-fit lg:static ${
-              isDarkTheme
-                ? "bg-black text-white lg:bg-transparent lg:text-inherit"
-                : "bg-white text-black lg:text-inherit"
-            } h-[70vh] lg:h-fit  lg:bg-transparent lg:text-inherit transition-all duration-500`}
+            } lg:flex lg:opacity-100 lg:w-fit lg:static h-[70vh] lg:h-fit  lg:bg-transparent lg:text-inherit transition-all duration-500 ${subMenuColor}`}
           >
             <StyledLinked
               to="/projects"
-              color={primaryTextColor}
               text="Projects"
+              handleClose={handleCloseNav}
             />
-            <StyledLinked to="/about" color={primaryTextColor} text="About" />
+            <StyledLinked
+              to="/about"
+              text="About"
+              handleClose={handleCloseNav}
+            />
+            <StyledLinked
+              to="/resume"
+              text="Resume"
+              handleClose={handleCloseNav}
+            />
             <StyledLinked
               to="/contact"
-              color={primaryTextColor}
               text="Contact"
+              handleClose={handleCloseNav}
             />
           </ul>
         </nav>
