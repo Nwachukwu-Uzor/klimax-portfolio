@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import Container from "../Layout/Container";
 
 import uche from "../assets/images/hero-image.png";
 
 const HeroSection = () => {
+  const { ref: headerRef, inView: headerInview } = useInView();
+  const headerAnimation = useAnimation();
+
+  useEffect(() => {
+    if (headerInview) {
+      headerAnimation.start({
+        y: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+    } else {
+      headerAnimation.start({
+        y: 4,
+      });
+    }
+  }, [headerInview]);
+
   return (
     <Container className="flex flex-col gap-3 lg:flex-row justify-between items-center lg:grid-cols-2 lg:py-10 min-h-[calc(85vh-60px)] relative">
       <div className="flex justify-center w-fit relative lg:justify-end lg:order-last">
@@ -18,9 +41,13 @@ const HeroSection = () => {
         </span>
       </div>
       <div className="lg:w-[50%]">
-        <h1 className="text-2xl lg:text-6xl font-bold">
+        <motion.h1
+          animate={{ animation: headerAnimation }}
+          ref={headerRef}
+          className="text-2xl lg:text-6xl font-bold"
+        >
           Hi, Welcome to my Designverse
-        </h1>
+        </motion.h1>
         <p className="my-2 lg:my-4">
           👋 I am Uchenna M. Ugwoke, a multipurpose designer, digital product
           designer and brand Identity engineer with passion for creating an

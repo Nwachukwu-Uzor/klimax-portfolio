@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import { motion } from "framer-motion";
+
 import {
   ResumeEducation,
   ResumeExperience,
@@ -32,10 +34,15 @@ const Resume = () => {
       <ResumeHeader />
       <ResumeExperience />
       {isExpanded ? (
-        <>
+        <motion.div
+          initial={{ opacity: 0, y: -4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          transition={{ type: "spring", bounce: 0.3, duration: 1 }}
+        >
           <ResumeEducation />
           <ResumeTechnicalDetails />
-        </>
+        </motion.div>
       ) : null}
       <Container>
         <div className="flex items-center justify-center my-4">
